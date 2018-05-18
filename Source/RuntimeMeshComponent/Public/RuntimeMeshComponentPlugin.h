@@ -1,8 +1,7 @@
-// Copyright 2016-2018 Chris Conway (Koderz). All Rights Reserved.
+// Copyright 2016 Chris Conway (Koderz). All Rights Reserved.
 
 #pragma once
 
-#include "CoreMinimal.h"
 #include "ModuleManager.h"
 
 /**
@@ -21,7 +20,7 @@ public:
 	*/
 	static inline IRuntimeMeshComponentPlugin& Get()
 	{
-		return FModuleManager::LoadModuleChecked<IRuntimeMeshComponentPlugin>("RuntimeMeshComponent");
+		return FModuleManager::LoadModuleChecked< IRuntimeMeshComponentPlugin >("RuntimeMeshComponentPlugin");
 	}
 
 	/**
@@ -31,8 +30,9 @@ public:
 	*/
 	static inline bool IsAvailable()
 	{
-		return FModuleManager::Get().IsModuleLoaded("RuntimeMeshComponent");
+		return FModuleManager::Get().IsModuleLoaded("RuntimeMeshComponentPlugin");
 	}
 };
+
 
 DECLARE_LOG_CATEGORY_EXTERN(RuntimeMeshLog, Log, All);
